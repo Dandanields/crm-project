@@ -1,0 +1,12 @@
+# Java: Ignoriere die kompilierten Dateien im bin-Ordner
+bin/
+*.class
+
+# VS Code: Ignoriere deine persönlichen Einstellungen
+.vscode/
+
+# Falls du später Bibliotheken hinzufügst
+lib/
+
+# Temporäre Dateien
+*.log
