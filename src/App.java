@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.danielsokic.crm_project.Customer;
+
 public class App {
     public static void main(String[] args) throws Exception {
       ArrayList<Customer> customerList = new ArrayList<>();
@@ -37,11 +39,6 @@ public class App {
             customerList.add(newCustomer);
 
             System.out.println("Kunde angelegt: " + firstName + " " + lastName);
-        }
-
-        System.out.println("\n--- Alle registrierten Kunden im System: ---");
-        for (Customer c : customerList) {
-            c.printInfo();
         }
 
         scanner.close();
