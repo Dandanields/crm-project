@@ -1,10 +1,44 @@
-<form id="customerForm">
-  <input type="text" id="fname" placeholder="Vorname" required />
-  <input type="text" id="lname" placeholder="Nachname" required />
-  <input type="email" id="mail" placeholder="E-Mail" required />
-  <button type="submit">Kunde anlegen</button>
-</form>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRM System</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 600px;
+      }
+      input {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+        padding: 8px;
+      }
+      button {
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Kunden anlegen</h2>
+    <input type="text" id="fname" placeholder="Vorname" />
+    <input type="text" id="lname" placeholder="Nachname" />
+    <input type="email" id="mail" placeholder="E-Mail" />
+    <button onclick="submitCustomer()">Speichern</button>
 
-<ul id="customerList"></ul>
+    <div id="list"></div>
 
-<script src="app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
