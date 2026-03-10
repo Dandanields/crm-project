@@ -1,5 +1,6 @@
 package com.daniel.crm_backend;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,18 +13,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class CustomerController {
 
-    @GetMapping("/greet")
-    public ResponseEntity<String> hello(@RequestParam(value = "name") String name) {
+    @Autowired
+    private TodoRepository todoRepository;
 
-        if(name.equals("admin")){
-            return new ResponseEntity<String>("Hello " + name, HttpStatus.OK);
-        } else{
-            return new ResponseEntity<String>("Error", HttpStatus.BAD_REQUEST);
-        }
+    @GetMapping("/todo")
+    public ResponseEntity<Todo> hello(@RequestParam(value = "id") int id) {
+
+        Todo newTodo = new Todo();
+        newTodo.setId(id);
+        newTodo.setDescription("Einkaufen");
+        newTodo.setIsDone(true);
+
+            return new ResponseEntity<Todo>(newTodo, HttpStatus.OK);
     }
 
     @PostMapping("/todo")
     public ResponseEntity<Todo> create(@RequestBody Todo newTodo) {
+        //save todo in db
+        todoRepository.save(newTodo);
         return new ResponseEntity<Todo>(newTodo, HttpStatus.OK);
     }
     
