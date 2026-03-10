@@ -16,6 +16,7 @@ public class Todo {
     }
 
     
+
     public void setDescription(String desc){
         this.description = desc;
     }
@@ -24,6 +25,8 @@ public class Todo {
        return this.description;
     }
 
+
+    
     
     public void setIsDone(boolean isDone){
         this.isDone = isDone;
